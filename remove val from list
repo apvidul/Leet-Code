@@ -6,11 +6,12 @@ class Solution(object):
         :rtype: int
         """
         for i in range(len(nums)):
-            if nums[i]== val:
-                nums[i] = 9999999999
-        
-        nums.sort()
-        for i in range(len(nums)):
-            if nums[i]==9999999999:
-                return i
-                
+            if nums[i]==val:
+                for j in range(i, len(nums)):
+                    if nums[j]!=val:
+                        nums[i]= nums[j]
+                        nums[j]= val
+                        break
+                    if j== len(nums)-1:
+                        return i
+                        
