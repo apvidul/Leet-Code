@@ -7,9 +7,9 @@ class Solution(object):
         k = k % len(nums)
         
         if k!=0:
-        
-            first = nums[:-k]
-            last = nums[-k:]     
+            
+            nums[:] =  nums[-k:] + nums[:-k] 
 
-            nums[:k] = last
-            nums[k:] = first
+        
+
+        
