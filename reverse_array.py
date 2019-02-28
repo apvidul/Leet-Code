@@ -1,10 +1,15 @@
+class Solution(object):
     def rotate(self, nums, k):
-        first = nums[:-k]
-        last = nums[-k:]
         
-                    
-        print first
-        print last
+        if len(nums)==1:
+            return
         
-        for i in first:
-            last.append(i)
+        k = k % len(nums)
+        
+        if k!=0:
+        
+            first = nums[:-k]
+            last = nums[-k:]     
+
+            nums[:k] = last
+            nums[k:] = first
